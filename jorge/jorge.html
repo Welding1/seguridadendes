@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario</title>
+<style>
+    /* Estilos simples para mejorar la apariencia */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Formulario</h2>
+
+<!-- Formulario HTML -->
+<form id="miFormulario" action="#" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" required>
+    
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="sexo" required>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+    </select>
+    
+    <button type="submit">Enviar</button>
+</form>
+
+<!-- Script para manejar el envío del formulario -->
+<script>
+    document.getElementById("miFormulario").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evitar que se envíe el formulario
+        
+        // Obtener los valores del formulario
+        var nombre = document.getElementById("nombre").value;
+        var edad = document.getElementById("edad").value;
+        var sexo = document.getElementById("sexo").value;
+        
+        // Mostrar los resultados en la página
+        var resultados = document.createElement("div");
+        resultados.innerHTML = "<h3>Resultados:</h3>" +
+                               "<p>Nombre: " + nombre + "</p>" +
+                               "<p>Edad: " + edad + "</p>" +
+                               "<p>Sexo: " + sexo + "</p>";
+        document.body.appendChild(resultados);
+    });
+</script>
+
+</body>
+</html>
